@@ -1,12 +1,14 @@
 import { FC, ReactNode } from 'react';
 import { Layout } from 'antd';
-import AppHeader from '../components/navbar/navbar';
-import Sidebar from '../components/sidebar/sidebar';
-import AppFooter from '../components/footer/footer';
+import {AppHeader} from '../components/navbar/navbar';
+import {Sidebar} from '../components/sidebar/sidebar';
+import {AppFooter} from '../components/footer/footer';
 
 const { Content } = Layout;
-
-const MainLayout:FC = ({ children }:any) => {
+interface PropsLayout {
+  children: ReactNode
+}
+export const MainLayout = ({ children }:PropsLayout) => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <AppHeader />
@@ -22,5 +24,3 @@ const MainLayout:FC = ({ children }:any) => {
     </Layout>
   );
 };
-
-export default MainLayout;

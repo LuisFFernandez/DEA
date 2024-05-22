@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd';
 
 const { Header } = Layout;
 
-const AppHeader: FC = () => {
+export const AppHeader = () => {
   return (
     <Header>
       <Menu theme="dark" mode="horizontal">
@@ -14,5 +14,3 @@ const AppHeader: FC = () => {
     </Header>
   );
 };
-
-export default AppHeader;

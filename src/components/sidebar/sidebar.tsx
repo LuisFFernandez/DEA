@@ -8,7 +8,7 @@ import {
 
 const { Sider } = Layout;
 
-const Sidebar: FC = () => {
+export const Sidebar = () => {
   return (
     <Sider width={200} className="site-layout-background">
       <Menu
@@ -24,4 +24,3 @@ const Sidebar: FC = () => {
   );
 };
 
-export default Sidebar;
