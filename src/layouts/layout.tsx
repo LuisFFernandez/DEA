@@ -1,26 +1,24 @@
-import { FC, ReactNode } from 'react';
-import { Layout } from 'antd';
-import {AppHeader} from '../components/navbar/navbar';
-import {Sidebar} from '../components/sidebar/sidebar';
-import {AppFooter} from '../components/footer/footer';
+import { FC, ReactNode } from "react";
+import { Layout } from "antd";
+import { AppHeader } from "../components/navbar/navbar";
+import { Sidebar } from "../components/sidebar/sidebar";
+import { AppFooter } from "../components/footer/footer";
 
 const { Content } = Layout;
 interface PropsLayout {
-  children: ReactNode
+  children: ReactNode;
 }
-export const MainLayout = ({ children }:PropsLayout) => {
+export const MainLayout = ({ children }: PropsLayout) => {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <AppHeader />
+    <Layout style={{ minHeight: "100vh" }}>
+      <Sidebar />
       <Layout>
-        <Sidebar />
-        <Layout style={{ padding: '0 24px 24px' }}>
-          <Content style={{ margin: 0, minHeight: 280 }}>
-            {children}
-          </Content>
+        <AppHeader />
+        <Layout style={{ padding: "0 24px 24px" }}>
+          <Content style={{ margin: 0, minHeight: 280 }}>{children}</Content>
         </Layout>
+        <AppFooter />
       </Layout>
-      <AppFooter />
     </Layout>
   );
 };
