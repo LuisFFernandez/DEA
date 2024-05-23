@@ -10,6 +10,7 @@ import {
   LaptopOutlined,
   NotificationOutlined,
 } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -40,32 +41,28 @@ const items: MenuItem[] = [
   //   ],
   // },
   {
-    key: 'dashboard',
+    key: "/",
     icon: <LaptopOutlined />,
-    label: (
-      <a href="#">
-        Dashboard
-      </a>
-    ),
+    label: <a href="#">Dashboard</a>,
   },
   {
-    key: 'members',
+    key: "/miembros/",
     icon: <UserOutlined />,
-    label: "Miembros"
+    label: "Miembros",
   },
   {
-    key: 'professions',
+    key: "/miembro/12/",
     icon: <LaptopOutlined />,
-    label: "Profesiones"
+    label: "Profesiones",
   },
   {
-    key: 'ministeries',
+    key: "/miembro/12/editar",
     icon: <LaptopOutlined />,
-    label: "Ministerios"
+    label: "Ministerios",
   },
   {
     type: "divider",
-  },  
+  },
   {
     key: "grp",
     label: "Group",
@@ -73,6 +70,7 @@ const items: MenuItem[] = [
     children: [
       { key: "settings", label: "Configuraciones" },
       { key: "help", label: "Ayuda" },
+      { key: "/login", label: "Log In" },
     ],
   },
 ];
@@ -80,6 +78,7 @@ const items: MenuItem[] = [
 const { Sider } = Layout;
 
 export const Sidebar = () => {
+  const router = useRouter();
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -89,6 +88,9 @@ export const Sidebar = () => {
         <div className="flex flex-col gap-8">
           <div>USUARIO</div>
           <Menu
+            onClick={(e: any) => {
+              router.push(e.key);
+            }}
             style={{ height: "100%" }}
             defaultSelectedKeys={["dashboard"]}
             defaultOpenKeys={["sub1"]}

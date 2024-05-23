@@ -8,6 +8,7 @@ import {
   SunFilled,
   MoonFilled,
   NotificationOutlined,
+  BellOutlined,
 } from "@ant-design/icons";
 import { BreadcrumbItemType } from "antd/es/breadcrumb/Breadcrumb";
 
@@ -52,7 +53,7 @@ export const AppHeader = () => {
           />
         </div>
         <div>
-          <Button icon={<NotificationOutlined />} />
+          <Button icon={<BellOutlined />} />
         </div>
         <div className="grow self-end flex justify-end gap-2">
           <Avatar icon={<UserOutlined />} /> <p>Luis Fernandez</p>
